@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.game-area {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#guessInput {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#guessInput:focus {
+    border-color: #667eea;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#guessBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#resetBtn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feedback {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 36px;
+}
+
+.feedback.cold {
+    color: #1e90ff;
+}
+
+.feedback.warm {
+    color: #ffa500;
+}
+
+.feedback.hot {
+    color: #ff4500;
+}
+
+.feedback.correct {
+    color: #228b22;
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.stats {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.history {
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.history-item {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.history-item.high {
+    border-left: 4px solid #ff4500;
+}
+
+.history-item.low {
+    border-left: 4px solid #1e90ff;
+}
+
+.history-item.correct {
+    border-left: 4px solid #228b22;
+    background: #e8f5e9;
+}
